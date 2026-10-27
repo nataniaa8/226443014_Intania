@@ -1,350 +1,163 @@
-"use client"
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-
-export default function SchoolLandingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-    setMobileMenuOpen(false)
-  }
+export default function Home() {
+  const programs = [
+    {
+      icon: "📚",
+      title: "Infinity Free",
+      description:
+        "InfinityFree adalah penyedia layanan hosting web gratis yang populer untuk pelajar, pemula, dan developer yang ingin belajar membuat website.",
+    },
+    {
+      icon: "🔬",
+      title: "Website Builder",
+      description:
+        "Platform untuk membuat website dengan mudah tanpa harus menulis kode, biasanya menggunakan tampilan visual dan fitur drag-and-drop.",
+    },
+    {
+      icon: "🎨",
+      title: "MySQL PHPmyAdmin",
+      description:
+        "MySQL adalah sistem manajemen basis data yang digunakan untuk menyimpan dan mengelola data.",
+    },
+    {
+      icon: "⚽",
+      title: "Github",
+      description:
+        "GitHub adalah platform online untuk menyimpan dan mengelola kode program menggunakan sistem kontrol versi Git.",
+    },
+    {
+      icon: "🌍",
+      title: "Netlify",
+      description:
+        "Netlify adalah platform hosting yang memungkinkan website dipublikasikan ke internet tanpa konfigurasi server yang rumit.",
+    },
+    {
+      icon: "💼",
+      title: "Kodular dan Firebase",
+      description:
+        "Kodular membantu pembuatan aplikasi Android, sedangkan Firebase menyediakan layanan untuk menyimpan dan mengelola data secara online.",
+    },
+  ];
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <header className="fixed top-0 w-full bg-[#00008A] text-white z-50 shadow-lg">
-        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold">Excellence Academy</div>
-
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex space-x-8">
-            <li>
-              <button onClick={() => scrollToSection("home")} className="hover:text-gray-300 transition-colors">
-                Home
-              </button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection("about")} className="hover:text-gray-300 transition-colors">
-                About
-              </button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection("programs")} className="hover:text-gray-300 transition-colors">
-                Programs
-              </button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection("contact")} className="hover:text-gray-300 transition-colors">
-                Contact
-              </button>
-            </li>
-          </ul>
-
-          {/* Mobile Menu Button */}
-          <button className="md:hidden flex flex-col space-y-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <span className="w-6 h-0.5 bg-white"></span>
-            <span className="w-6 h-0.5 bg-white"></span>
-            <span className="w-6 h-0.5 bg-white"></span>
-          </button>
-        </nav>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-[#00008A] border-t border-blue-700">
-            <ul className="flex flex-col space-y-2 p-4">
-              <li>
-                <button
-                  onClick={() => scrollToSection("home")}
-                  className="block w-full text-left py-2 hover:text-gray-300"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="block w-full text-left py-2 hover:text-gray-300"
-                >
-                  About
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("programs")}
-                  className="block w-full text-left py-2 hover:text-gray-300"
-                >
-                  Programs
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("contact")}
-                  className="block w-full text-left py-2 hover:text-gray-300"
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
+    <main className="min-h-screen bg-white text-gray-800">
+      <header className="sticky top-0 z-50 bg-[#00008A] text-white shadow-md">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+          <a href="#home" className="text-2xl font-bold">
+            Praktik AKA
+          </a>
+          <div className="flex gap-4 text-sm sm:gap-8 sm:text-base">
+            <a href="#home" className="hover:text-gray-300">Home</a>
+            <a href="#about" className="hover:text-gray-300">About</a>
+            <a href="#programs" className="hover:text-gray-300">Programs</a>
+            <a href="#contact" className="hover:text-gray-300">Contact</a>
           </div>
-        )}
+        </nav>
       </header>
 
-      {/* Hero Section */}
       <section
         id="home"
-        className="bg-gradient-to-br from-[#00008A] to-[#0000CD] text-white pt-20 pb-16 text-center relative overflow-hidden"
+        className="bg-gradient-to-br from-[#00008A] to-[#0000CD] px-6 py-28 text-center text-white"
       >
-        <div className="absolute inset-0 opacity-10">
-          <img
-            src="/placeholder.svg?height=600&width=1200&text=School+Campus"
-            alt="School background"
-            className="w-full h-full object-cover"
-          />
+        <div className="mx-auto max-w-4xl">
+          <h1 className="mb-6 text-4xl font-bold sm:text-6xl">
+            Aplikasi Komputasi Awan
+          </h1>
+          <p className="mx-auto mb-8 max-w-2xl text-lg sm:text-xl">
+            Belajar Buat Repository di Cloud menggunakan Github dan Integrasi
+            dengan Netlify
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://github.com/"
+              className="rounded-md bg-white px-8 py-3 font-bold text-[#00008A] hover:bg-gray-100"
+            >
+              Github
+            </a>
+            <a
+              href="https://app.netlify.com/"
+              className="rounded-md border-2 border-white px-8 py-3 font-bold text-white hover:bg-white hover:text-[#00008A]"
+            >
+              Netlify
+            </a>
+          </div>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-shadow">Shaping Tomorrow's Leaders</h1>
-            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Excellence Academy provides world-class education that empowers students to achieve their dreams and make
-              a positive impact on the world.
+      </section>
+
+      <section id="about" className="bg-gray-50 px-6 py-20">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+          <div>
+            <h2 className="mb-5 text-3xl font-bold text-[#00008A] sm:text-4xl">
+              Aplikasi Komputasi Awan
+            </h2>
+            <p className="mb-5 text-lg leading-8 text-gray-600">
+              Aplikasi komputasi awan adalah aplikasi yang dijalankan atau
+              disimpan di server cloud (awan), bukan di komputer lokal.
+              Contohnya Google Drive, Zoom, Gmail, atau website yang di-host
+              di AWS.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={() => scrollToSection("programs")}
-                className="bg-white text-[#00008A] hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
-              >
-                Explore Programs
-              </Button>
-              <Button
-                onClick={() => scrollToSection("contact")}
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#00008A] px-8 py-3 text-lg font-semibold"
-              >
-                Schedule Visit
-              </Button>
+            <p className="mb-8 text-lg leading-8 text-gray-600">
+              Model layanan komputasi awan terdiri dari IaaS (Infrastructure
+              as a Service), PaaS (Platform as a Service), dan SaaS (Software
+              as a Service).
+            </p>
+            <div className="grid grid-cols-3 gap-4 text-center">
+              {[
+                ["IaaS", "Infrastructure as a Service"],
+                ["PaaS", "Platform as a Service"],
+                ["SaaS", "Software as a Service"],
+              ].map(([name, detail]) => (
+                <div key={name}>
+                  <p className="text-2xl font-bold text-[#00008A]">{name}</p>
+                  <p className="mt-2 text-xs text-gray-600 sm:text-sm">
+                    {detail}
+                  </p>
+                </div>
+              ))}
             </div>
+          </div>
+          <div>
+            <img
+              src="https://go4hosting.com/wp-content/uploads/2021/02/abc.jpg.png"
+              alt="Ilustrasi Cloud Computing"
+              className="w-full rounded-xl shadow-lg"
+            />
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#00008A] mb-6">About Excellence Academy</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                For over 50 years, Excellence Academy has been at the forefront of educational innovation, nurturing
-                young minds and preparing them for success in an ever-changing world.
-              </p>
-              <p className="text-lg text-gray-600 mb-8">
-                Our dedicated faculty, state-of-the-art facilities, and comprehensive curriculum ensure that every
-                student receives the support they need to excel academically and personally.
-              </p>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#00008A]">2,500+</div>
-                  <div className="text-sm text-gray-600">Students</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#00008A]">98%</div>
-                  <div className="text-sm text-gray-600">Graduation Rate</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#00008A]">150+</div>
-                  <div className="text-sm text-gray-600">Faculty Members</div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img
-                src="/placeholder.svg?height=400&width=500&text=School+Campus+Building"
-                alt="School Campus"
-                className="w-full rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Programs Section */}
-      <section id="programs" className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#00008A] text-center mb-12">Our Programs</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "📚",
-                title: "Elementary Education",
-                description:
-                  "Building strong foundations in literacy, numeracy, and critical thinking skills through engaging and interactive learning experiences.",
-              },
-              {
-                icon: "🔬",
-                title: "STEM Programs",
-                description:
-                  "Cutting-edge science, technology, engineering, and mathematics programs that prepare students for the careers of tomorrow.",
-              },
-              {
-                icon: "🎨",
-                title: "Arts & Culture",
-                description:
-                  "Comprehensive arts education including visual arts, music, theater, and cultural studies to foster creativity and expression.",
-              },
-              {
-                icon: "⚽",
-                title: "Athletics",
-                description:
-                  "Competitive sports programs and physical education that promote teamwork, discipline, and healthy lifestyle habits.",
-              },
-              {
-                icon: "🌍",
-                title: "Global Studies",
-                description:
-                  "International curriculum and exchange programs that prepare students to be global citizens and leaders.",
-              },
-              {
-                icon: "💼",
-                title: "Career Preparation",
-                description:
-                  "Practical skills training and career guidance to ensure students are ready for higher education and the workforce.",
-              },
-            ].map((program, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow duration-300 hover:-translate-y-1 transform transition-transform"
+      <section id="programs" className="px-6 py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-12 text-center text-3xl font-bold text-[#00008A] sm:text-4xl">
+            Our Programs
+          </h2>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {programs.map((program) => (
+              <article
+                key={program.title}
+                className="rounded-xl bg-white p-8 shadow-lg transition hover:-translate-y-1"
               >
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-[#00008A] rounded-full flex items-center justify-center text-2xl text-white mb-4">
-                    {program.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-[#00008A] mb-3">{program.title}</h3>
-                  <p className="text-gray-600">{program.description}</p>
-                </CardContent>
-              </Card>
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#00008A] text-2xl">
+                  {program.icon}
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-[#00008A]">
+                  {program.title}
+                </h3>
+                <p className="leading-7 text-gray-600">
+                  {program.description}
+                </p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-[#00008A] text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get In Touch</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <span className="text-xl">📍</span>
-                  <div>
-                    <strong>Address:</strong>
-                    <br />
-                    123 Education Boulevard
-                    <br />
-                    Learning City, LC 12345
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <span className="text-xl">📞</span>
-                  <div>
-                    <strong>Phone:</strong>
-                    <br />
-                    (555) 123-4567
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <span className="text-xl">✉️</span>
-                  <div>
-                    <strong>Email:</strong>
-                    <br />
-                    info@excellenceacademy.edu
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <span className="text-xl">🕒</span>
-                  <div>
-                    <strong>Office Hours:</strong>
-                    <br />
-                    Monday - Friday: 8:00 AM - 5:00 PM
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
-              <h3 className="text-2xl font-semibold mb-6">Send us a Message</h3>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block mb-2">
-                    Full Name
-                  </label>
-                  <input type="text" id="name" name="name" required className="w-full p-3 rounded-md text-gray-900" />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full p-3 rounded-md text-gray-900"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="subject" className="block mb-2">
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full p-3 rounded-md text-gray-900"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    className="w-full p-3 rounded-md text-gray-900 resize-vertical"
-                  ></textarea>
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-white text-[#00008A] hover:bg-gray-100 py-3 text-lg font-semibold"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-[#000066] text-white text-center py-8">
-        <div className="container mx-auto px-4">
-          <p>&copy; 2024 Excellence Academy. All rights reserved. | Empowering minds, shaping futures.</p>
-        </div>
+      <footer
+        id="contact"
+        className="bg-[#000066] px-6 py-8 text-center text-white"
+      >
+        <p>© 2025 Aplikasi Komputasi Awan | TRin Polman Bandung</p>
       </footer>
-    </div>
-  )
+    </main>
+  );
 }
